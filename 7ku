@@ -35,3 +35,27 @@ count=0;
     return 0;
 
 }
+
+
+//7ku question:Isograms
+function isIsogram(str){
+var str=str.toUpperCase();//to uppercase(letter case dont matter)
+var str=str.split("");//change it to array
+var newstr="";//empty string
+var i=0;
+for(var j=0;j<str.length;j++){
+  for(var i=j;i<str.length;i++){
+    if(str[j]==str[i+1])//check
+    str[i+1]="*";//if there is repeat change it to *
+  }
+  }//bottom of the loop
+
+  for (i=0;i<str.length;i++){
+    if(str[i]!='*' )//check
+    newstr+=str[i];//store the delete letter into string
+  }//bottom of loop
+  if(newstr.length==str.length)
+  return true;
+  else if(newstr.length<str.length)
+  return false;
+}
