@@ -1,10 +1,5 @@
-/*
-7 kyu question: Is this a triangle?
-Implement a method that accepts 3 integer values a, b, c.
-The method should return true if a triangle can be built with the sides of given length and false in any other case.
-(In this case, all triangles must have surface greater than 0 to be accepted).
-*/
 
+//7 kyu question: Is this a triangle?
 //code
 function isTriangle(a,b,c)
 {
@@ -12,16 +7,10 @@ function isTriangle(a,b,c)
     return true;
     else
    return false;
-}
-/*
-7kyu question:
-Mr. Scrooge has a sum of money 'P' that wants to invest, and he wants to know how many years 'Y' this sum has to be kept in the bank in order for this sum of money to amount to 'D'.
+}//bottom of isTriangle
 
-The sum is kept for 'Y' years in the bank where interest 'I' is paid yearly, and the new sum is re-invested yearly after paying tax 'T'
 
-Note that the principal is not taxed but only the year's accrued interest
-*/
-
+//7kyu question:Money, Money, Money
 //code
 function calculateYears(principal, interest, tax, desired) {
     // your code
@@ -34,10 +23,11 @@ count=0;
     if(principal>=desired)
     return 0;
 
-}
+}//bottom of calculateYears
 
 
 //7ku question:Isograms
+/code
 function isIsogram(str){
 var str=str.toUpperCase();//to uppercase(letter case dont matter)
 var str=str.split("");//change it to array
@@ -58,4 +48,4 @@ for(var j=0;j<str.length;j++){
   return true;
   else if(newstr.length<str.length)
   return false;
-}
+}//bottom of isIsogram
