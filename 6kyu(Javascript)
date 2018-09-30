@@ -1,0 +1,20 @@
+//6yku question:Who likes it?
+//code
+function likes(names) {
+  // TODO
+  l=names.length;//find the array length
+  lenFor4=l-2;//use for if the array length is more than 4
+  newstr="";//empty string
+  if(l===0)
+  return "no one likes this";
+  else if(l>=4)
+  newstr=names[0]+", "+names[1]+" and "+lenFor4+" others like this";
+  else if(l===3)
+  newstr=names[0]+", "+names[1]+ " and "+names[2]+" like this";
+  else if(l===2)
+  newstr=names[0]+ " and "+names[1]+" like this";
+  else
+  newstr=names[0]+" likes this";
+  console.log(newstr)//check
+  return newstr;
+}//bottom of likes
