@@ -1,0 +1,63 @@
+/*
+6 kyu question :Sum of Digits / Digital Root
+In this kata, you must create a digital root function.
+
+A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has two digits, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
+
+Here's how it works (Ruby example given):
+
+digital_root(16)
+=> 1 + 6
+=> 7
+
+digital_root(942)
+=> 9 + 4 + 2
+=> 15 ...
+=> 1 + 5
+=> 6
+
+digital_root(132189)
+=> 1 + 3 + 2 + 1 + 8 + 9
+=> 24 ...
+=> 2 + 4
+=> 6
+
+digital_root(493193)
+=> 4 + 9 + 3 + 1 + 9 + 3
+=> 29 ...
+=> 2 + 9
+=> 11 ...
+=> 1 + 1
+=> 2
+*/
+
+//code
+function digital_root(n) {
+  // ...
+  var str=n.toString(); //change into string
+  var sum=0;//the first sum
+  var newStr;//second string which will conver sum into string
+  var newSum=0;//second sum
+  var lastStr;//last string will cover second sum into string
+  var lastSum=0;//last sum
+  for(var i=0;i<str.length;i++){
+      sum+=parseInt(str[i]);//will add up the separate integer
+  }//end of loop
+ newStr=sum.toString();//change it to string
+  if (newStr.length===1)//check if sum has one digits
+  return sum;
+  else if(newStr.length>=2){//check if sum has two digits
+    for(var i=0;i<newStr.length;i++){
+      newSum+=parseInt(newStr[i]);//if there is two digits add the separate integer up
+  }//end of loop
+  lastStr=newSum.toString();//change it into string
+  }//end of else if statment
+  if(lastStr.length===1)//check if sum has one digits
+  return newSum;
+  else if(lastStr.length>=2){//check if sum has two digits
+          for(var i=0;i<lastStr.length;i++){
+      lastSum+=parseInt(lastStr[i]);
+  }
+  return lastSum;
+  }//bottom of else if statment
+  
