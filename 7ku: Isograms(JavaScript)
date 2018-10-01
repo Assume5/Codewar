@@ -1,0 +1,32 @@
+/*7ku question:Isograms
+An isogram is a word that has no repeating letters, consecutive or non-consecutive.
+Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. 
+Ignore letter case.
+
+isIsogram( "Dermatoglyphics" ) == true
+isIsogram( "aba" ) == false
+isIsogram( "moOse" ) == false // -- ignore letter case
+
+*/
+/code
+function isIsogram(str){
+var str=str.toUpperCase();//to uppercase(letter case dont matter)
+var str=str.split("");//change it to array
+var newstr="";//empty string
+var i=0;
+for(var j=0;j<str.length;j++){
+  for(var i=j;i<str.length;i++){
+    if(str[j]==str[i+1])//check
+    str[i+1]="*";//if there is repeat change it to *
+  }
+  }//bottom of the loop
+
+  for (i=0;i<str.length;i++){
+    if(str[i]!='*' )//check
+    newstr+=str[i];//store the delete letter into string
+  }//bottom of loop
+  if(newstr.length==str.length)
+  return true;
+  else if(newstr.length<str.length)
+  return false;
+}//bottom of isIsogram
