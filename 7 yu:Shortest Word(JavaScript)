@@ -1,0 +1,16 @@
+/*
+7 kyu:Shortest Word
+Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types.
+*/
+//code
+function findShort(s){
+    newarray=s.split(" ");
+    var a=newarray[0].length;//will store the length of the first index of array
+    for(var i=0;i<newarray.length;i++){
+        if(a>newarray[i].length)//find the smallest length
+        a=newarray[i].length
+    }
+    return a;
+}// bottom of function findShorts
