@@ -1,0 +1,29 @@
+/*
+6 kyu: Array.diff
+Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+It should remove all values from list a, which are present in list b.
+
+array_diff([1,2],[1]) == [2]
+If a value is present in b, all of its occurrences must be removed from the other:
+
+array_diff([1,2,2,2,3],[2]) == [1,3]
+*/
+//code
+function array_diff(a, b) {
+    array=[]; //use for output
+    if(b.length===0)//if b=[] means there is nothing to remove so we can just return a
+    return a;
+    for(var i=0;i<a.length;i++){
+        for(var j=0;j<b.length;j++){
+            if(a[i]===b[j]){//check if there is same values
+                a.splice(i,1,'x');  //if there is same value convert it to 'x'
+            }
+                }
+    }
+    for(var i=0;i<a.length;i++){
+        if(a[i]!='x')
+        array.push(a[i]);//final check if there is 'x' remove it
+    }
+    return array;
+}
