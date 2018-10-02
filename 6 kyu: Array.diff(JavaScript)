@@ -20,10 +20,10 @@ function array_diff(a, b) {
                 a.splice(i,1,'x');  //if there is same value convert it to 'x'
             }
                 }
-    }
+    }//bottom of loop
     for(var i=0;i<a.length;i++){
         if(a[i]!='x')
         array.push(a[i]);//final check if there is 'x' remove it
-    }
+    }//bottom of the loop
     return array;
-}
+}//bottom of function array_diff
