@@ -1,0 +1,35 @@
+/*6 kyu:Detect Pangram
+A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+*/
+function isPangram(string){
+    //...
+    copyStr=string;  //use for delete repeating letter
+    copyStr=copyStr.split("");//covert into array
+    deleteStr="";//use for delete repeating letter
+    A_Z=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];//A-Z
+    for(var i=0;i<string.length;i++){
+        for(var j=i;j<string.length;j++){
+            if(string[i]===copyStr[j+1])
+            copyStr[j+1]='*';//change the repeat letter to *
+        }
+    }//bottom of loop
+    for(var i=0;i<copyStr.length;i++){
+        if(copyStr[i]!='*')
+        deleteStr+=copyStr[i];//delete the repeat letter
+
+    }//bottom of loop
+    deleteStr=deleteStr.toUpperCase();//set it to upper case
+    count=0;//use for counting if the string use all alphabet
+    for(var i=0;i<deleteStr.length;i++){
+        for(var j=0;j<A_Z.length;j++){
+            if(deleteStr[i]===A_Z[j])
+            count++;
+        }
+    }//bottom of loop
+    if(count===26)
+    return true;
+    else
+    return false;
+  }//bottom of isPangram
