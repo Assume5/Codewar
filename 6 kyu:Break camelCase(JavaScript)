@@ -1,0 +1,24 @@
+/*
+6 kyu
+Break camelCase
+Complete the solution so that the function will break up camel casing, using a space between words.
+
+Example
+solution('camelCasing') // => should return 'camel Casing'
+*/
+
+// complete the function
+function solution(string) {
+  A_Z=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];//A-Z
+
+    newStr="";
+    for(i=0;i<string.length;i++){
+      for(j=0;j<A_Z.length;j++){
+        if(string[i]===A_Z[j]) //check if there is upper case letter
+        newStr+=" "//if yes add space
+      }
+      newStr+=string[i]
+    }
+    return newStr;
+}
+
