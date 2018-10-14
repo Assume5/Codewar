@@ -1,0 +1,24 @@
+/*
+6 kyu:Convert string to camel case
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized.
+
+Examples
+toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+
+toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+*/
+
+function toCamelCase(str){
+      newStr="";
+      if(str.length===0)
+      return str;//return str if its empty
+      for(var i=0;i<str.length;i++){
+        if(str[i]==='-'||str[i]==='_'){ //check if there is - or _
+          newStr+=str[i+1].toUpperCase();// if yes covert it to uppercase
+          i+=1;//i+1
+        }
+        else
+        newStr+=str[i];
+      }//bottom of loop
+      return newStr;
+}//bottom of toCamelCase
