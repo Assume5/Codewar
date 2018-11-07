@@ -1,0 +1,32 @@
+  /*
+  6kyu question:
+  WeIrD StRiNg CaSe
+Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased. The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased.
+
+The passed in string will only consist of alphabetical characters and spaces(' '). Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').
+
+Examples:
+toWeirdCase( "String" );//=> returns "StRiNg"
+toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe"
+  */
+  
+  //code
+function toWeirdCase(string){
+    let newStr="";// use for store the string that is weird case
+    let array=string.split(" ")//conver it to array by space
+    for(let element of array){
+        for(let i=0;i<element.length;i++){
+            if(i===0){
+            newStr+=element[i].toUpperCase()
+            }
+            else if(i%2===0){
+                newStr+=element[i].toUpperCase();
+            }
+            else
+            newStr+=element[i];
+        }//bottom of loop
+        newStr+=" "
+    }//bottom of main loop
+    newStr=newStr.slice(0,newStr.length-1) //delete the last space
+    return newStr;
+  }//bottom of toWeirdCase
