@@ -31,33 +31,17 @@ digital_root(493193)
 => 2
 */
 
-//code
 function digital_root(n) {
   // ...
+  if(n<10){
+      return n;
+  }
+  else{
   var str=n.toString(); //change into string
   var sum=0;//the first sum
-  var newStr;//second string which will conver sum into string
-  var newSum=0;//second sum
-  var lastStr;//last string will cover second sum into string
-  var lastSum=0;//last sum
   for(var i=0;i<str.length;i++){
       sum+=parseInt(str[i]);//will add up the separate integer
-  }//end of loop
- newStr=sum.toString();//change it to string
-  if (newStr.length===1)//check if sum has one digits
-  return sum;
-  else if(newStr.length>=2){//check if sum has two digits
-    for(var i=0;i<newStr.length;i++){
-      newSum+=parseInt(newStr[i]);//if there is two digits add the separate integer up
-  }//end of loop
-  lastStr=newSum.toString();//change it into string
-  }//end of else if statment
-  if(lastStr.length===1)//check if sum has one digits
-  return newSum;
-  else if(lastStr.length>=2){//check if sum has two digits
-          for(var i=0;i<lastStr.length;i++){
-      lastSum+=parseInt(lastStr[i]);
   }
-  return lastSum;
-  }//bottom of else if statment
-  
+    return digital_root(sum)
+    }
+}
