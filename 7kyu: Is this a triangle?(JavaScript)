@@ -12,19 +12,3 @@ function isTriangle(a,b,c)
     else
    return false;
 }//bottom of isTriangle
-
-
-//7kyu question:Money, Money, Money
-//code
-function calculateYears(principal, interest, tax, desired) {
-    // your code
-count=0;
-    while(principal<desired){
-    principal=(principal*(1+interest))-(principal*interest*tax);
-    count++;
-    }
-    return count;
-    if(principal>=desired)
-    return 0;
-
-}//bottom of calculateYears
