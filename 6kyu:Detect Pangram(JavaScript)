@@ -5,31 +5,13 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
 */
 function isPangram(string){
     //...
-    copyStr=string;  //use for delete repeating letter
-    copyStr=copyStr.split("");//covert into array
-    deleteStr="";//use for delete repeating letter
-    A_Z=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];//A-Z
-    for(var i=0;i<string.length;i++){
-        for(var j=i;j<string.length;j++){
-            if(string[i]===copyStr[j+1])
-            copyStr[j+1]='*';//change the repeat letter to *
-        }
-    }//bottom of loop
-    for(var i=0;i<copyStr.length;i++){
-        if(copyStr[i]!='*')
-        deleteStr+=copyStr[i];//delete the repeat letter
-
-    }//bottom of loop
-    deleteStr=deleteStr.toUpperCase();//set it to upper case
-    count=0;//use for counting if the string use all alphabet
-    for(var i=0;i<deleteStr.length;i++){
-        for(var j=0;j<A_Z.length;j++){
-            if(deleteStr[i]===A_Z[j])
-            count++;
-        }
-    }//bottom of loop
-    if(count===26)
-    return true;
-    else
-    return false;
+    string=string.toUpperCase()
+    let hashTable={}
+    let nonletters="12345678790.,\|_ <>\\?!@#$%^&*()/*-+=[]{}:;/"
+    for(let i=0;i<string.length;i++){
+        if(!nonletters.includes(string[i]))
+        hashTable[string[i]]=0
+    }
+    if(Object.keys(hashTable).length==26) return true
+    return false
   }//bottom of isPangram
