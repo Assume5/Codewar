@@ -9,10 +9,9 @@ For C#: Use a Dictionary<char, int> for this kata!
 def count(string):
     # The function code should be here
     dict={}
-    wordList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v','w', 'x', 'y', 'z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']#a-zA-Z
-    for i in wordList:
-        count=string.count(i) #will count the charater in string
-        for j in string:
-            if i in string:
-                dict[i]=count #put it in dict
+    for i in string:
+        if i in dict:
+            dict[i]+=1
+        else:
+            dict[i]=1
     return dict
